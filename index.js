@@ -26,10 +26,12 @@ app.use(cors());
 //middlewares
 app.use(express.json());
 app.use(moragan("dev"));
+app.use('/uploads', express.static('uploads'));
 
 // routes
 app.use("/api/v1/products",require('./routes/productRoutes') )
 app.use("/api/v1/users", require("./routes/userRoutes"))
+app.use("/api/v1/orders", require("./routes/orderRoutes"))
 
 
 
